@@ -1,0 +1,154 @@
+:root {
+    /* Main Backgrounds & Surfaces */
+    --background-dark: #1A121A; /* A very dark, subtle purple-black for main backgrounds */
+    --surface-dark: #3B1F2B;    /* Your requested deep plum, great for cards, headers, or distinct sections */
+    --surface-medium: #2B1724;  /* A slightly lighter shade of the main purple, for interactive elements or secondary surfaces */
+    --surface-card: #2B1724;    /* Specific for card background, aligning with surface-medium */
+    --surface-category-background: #2B1724; /* Background for category sections */
+    --surface-platform-background: #2B1724; /* Background for platform sections (reusing for consistency) */
+
+
+    /* Text Colors */
+    --text-light: #E0E0E0;      /* A soft off-white for primary text, ensuring good contrast */
+    --text-medium: #B0B0B0;     /* A slightly darker grey for secondary text or less prominent information */
+    --text-accent: #9A7CFF;     /* A vibrant, but not overpowering, purple for links, highlights, or key information */
+    --text-category-heading: #9A7CFF; /* Accent color for category headings */
+
+
+    /* Accent & Interactive Colors */
+    --primary-accent: #9A7CFF;  /* The main accent color, a bright but muted purple */
+    --secondary-accent: #6C42F4; /* A deeper, more saturated purple for active states, buttons, or stronger emphasis */
+    --success-green: #4CAF50;   /* A standard green for success messages or positive indicators */
+    --error-red: #F44336;       /* A standard red for error messages or warnings */
+
+
+    /* Borders & Shadows */
+    --border-subtle: rgba(154, 124, 255, 0.2); /* A subtle purple border, very light */
+    --border-category: var(--primary-accent); /* Border for category sections, use accent for distinction */
+    --shadow-soft: rgba(0, 0, 0, 0.4);       /* Soft shadow for depth */
+    --shadow-strong: rgba(0, 0, 0, 0.7);     /* Stronger shadow for prominent elements */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: var(--background-dark);
+    color: var(--text-light);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background: var(--surface-dark);
+    border: 3.25px solid var(--border-subtle);
+    box-shadow: 0 4px 8px var(--shadow-soft);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.link3 {
+    color: var(--text-light);
+}
+
+nav {
+    display: flex;
+    margin-right: 52px;
+    gap: 50px;
+}
+
+main {
+    max-width: 1024px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.link2 {
+    color: var(--text-light);
+}
+
+section {
+    margin-left: 10px; /* Keep this if you want an overall left margin for sections within main */
+}
+
+footer {
+    width: 100%;
+    background: var(--background-dark);
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 479px) {
+    /* These grid properties are typically applied to a grid container, not the main element itself.
+       If 'main' is your grid container for the entire layout, this is fine, otherwise,
+       you might want to apply these to a wrapper div inside main.
+       I'm removing the explicit grid-template-areas, rows, and columns from 'main' here
+       as it's often more practical to define grid layouts on specific inner containers.
+       If you intend for 'main' itself to be a grid, please confirm.
+    */
+    main {
+        max-width: 479px;
+        width: 100%;
+    }
+
+    footer {
+        max-width: 479px;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+        margin-left: 30px;
+    }
+}
+
+/* --- NOVO BLOCO PARA CATEGORIAS --- */
+.container-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.container-categorias section {
+    background-color: var(--surface-category-background); /* Using a surface variable */
+    border: 2px dashed var(--border-category); /* Using a category border variable */
+    border-radius: 12px;
+    padding: 15px;
+    color: var(--text-light); /* Using text-light for content */
+    box-shadow: 0 2px 6px var(--shadow-soft);
+    transition: 0.3s;
+}
+
+.container-categorias h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--text-category-heading); /* Using a dedicated heading color */
+    text-shadow: 3px 3px 3.5px rgb(0, 0, 0); /* Keeping specific black shadow as is */
+}
+
+.container-categorias ol {
+    padding-left: 20px;
+    text-shadow: 3px 3px 3.5px rgb(0, 0, 0); /* Keeping specific black shadow as is */
+}
+
+.container-categorias section:hover {
+    border: 3px solid var(--primary-accent); /* Border changes to accent color on hover */
+    box-shadow: 0 12px 24px var(--shadow-strong), 0 -4px 8px var(--shadow-soft);
+    transform: scale(1.05);
+}
+
+.plataforma {
+    background-color: var(--surface-platform-background); /* Reusing a surface variable */
+    border-color: var(--secondary-accent); /* Using a stronger accent for platform border */
+    text-shadow: 3px 3px 3.5px rgb(0, 0, 0); /* Keeping specific black shadow as is */
+}
