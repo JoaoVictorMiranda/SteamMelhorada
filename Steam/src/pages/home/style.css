@@ -1,35 +1,23 @@
 :root {
-    /* Main Backgrounds & Surfaces */
-    --background-dark: #1A121A; /* A very dark, subtle purple-black for main backgrounds */
-    --surface-dark: #3B1F2B;    /* Your requested deep plum, great for cards, headers, or distinct sections */
-    --surface-medium: #2B1724;  /* A slightly lighter shade of the main purple, for interactive elements or secondary surfaces */
-    --surface-card: #2B1724;    /* Specific for card background, aligning with surface-medium */
-    --surface-menu-mobile: #3B1F2B; /* Background for mobile menu, can be surface-dark or surface-medium */
-
-
-    /* Text Colors */
-    --text-light: #E0E0E0;      /* A soft off-white for primary text, ensuring good contrast */
-    --text-medium: #B0B0B0;     /* A slightly darker grey for secondary text or less prominent information */
-    --text-accent: #9A7CFF;     /* A vibrant, but not overpowering, purple for links, highlights, or key information */
-
-
-    /* Accent & Interactive Colors */
-    --primary-accent: #9A7CFF;  /* The main accent color, a bright but muted purple */
-    --secondary-accent: #6C42F4; /* A deeper, more saturated purple for active states, buttons, or stronger emphasis */
-    --success-green: #4CAF50;   /* A standard green for success messages or positive indicators */
-    --error-red: #F44336;       /* A standard red for error messages or warnings */
-
-
-    /* Borders & Shadows */
-    --border-subtle: rgba(154, 124, 255, 0.2); /* A subtle purple border, very light */
-    --shadow-soft: rgba(0, 0, 0, 0.4);       /* Soft shadow for depth */
-    --shadow-strong: rgba(0, 0, 0, 0.7);     /* Stronger shadow for prominent elements */
-
-    /* Hamburger specific */
-    --hamburger-bar-color: var(--text-light); /* Cor das barras do hambúrguer */
+    --background-dark: #1A121A;
+    --surface-dark: #3B1F2B;
+    --surface-medium: #2B1724;
+    --surface-card: #2B1724;
+    --surface-menu-mobile: #3B1F2B;
+    --text-light: #E0E0E0;
+    --text-medium: #B0B0B0;
+    --text-accent: #9A7CFF;
+    --border-subtle: rgba(154, 124, 255, 0.2);
+    --shadow-soft: rgba(0, 0, 0, 0.4);
+    --shadow-strong: rgba(0, 0, 0, 0.7);
+    --hamburger-bar-color: var(--text-light);
 }
 
-* { padding: 0; margin: 0; box-sizing: border-box; }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     display: flex;
@@ -44,16 +32,16 @@ header {
     display: flex;
     align-items: center;
     padding: 25px;
-    background: var(--surface-dark); /* Using surface-dark for header */
-    border: 3.25px solid var(--border-subtle); /* Using border-subtle for header border */
+    background: var(--surface-dark);
+    border: 3.25px solid var(--border-subtle);
     box-shadow: 0 4px 8px var(--shadow-soft);
     width: 100%;
-    justify-content: space-between; /* Ajustado para espaçar logo, hambúrguer e nav */
-    position: relative; /* Necessário para posicionar o menu mobile */
-    z-index: 10; /* Garante que o header esteja acima do resto */
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
 }
 
-.link3{
+.link3 {
     color: var(--text-light);
 }
 
@@ -62,12 +50,11 @@ main {
     width: 100%;
 }
 
-/* Estilo padrão para a navegação em telas maiores */
-.main-nav{
+.main-nav {
     display: flex;
     margin-right: 52px;
     gap: 50px;
-    align-items: center; /* Alinha os itens verticalmente */
+    align-items: center;
 }
 
 .cartoes {
@@ -76,44 +63,82 @@ main {
     gap: 20px;
 }
 
-.cartaog, .grande, .grande3 {
+.cartaog,
+.grande,
+.grande3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: 0.3s;
 }
 
-.cartaog:hover, .grande:hover, .grande3:hover { transform: scale(1.05); }
+.cartaog:hover,
+.grande:hover,
+.grande3:hover {
+    transform: scale(1.05);
+}
 
-.imgta, .imagemg, .imagemp {
+.imgta,
+.imagemg,
+.imagemp {
     border-radius: 20px;
     box-shadow: 0 4px 8px var(--shadow-soft);
     transition: 0.5s;
 }
 
-.imgta { width: 570px; height: 305px; border-radius: 50px; }
-.imgta:hover, .imagemg:hover, .imagemp:hover {
-    border: 3px solid var(--primary-accent); /* Border changes to accent color on hover */
+.imgta {
+    width: 570px;
+    height: 305px;
+    border-radius: 50px;
+}
+
+.imgta:hover,
+.imagemg:hover,
+.imagemp:hover {
+    border: 3px solid var(--primary-accent);
     box-shadow: 0 12px 24px var(--shadow-strong), 0 -4px 8px var(--shadow-soft);
     transform: scale(1.05);
 }
 
-.imagemg { width: 470px; height: 250px; }
-.imagemp { width: 220px; height: 130px; }
+.imagemg {
+    width: 470px;
+    height: 250px;
+}
+
+.imagemp {
+    width: 220px;
+    height: 130px;
+}
 
 .pequeno {
-    width: 250px; height: 150px;
+    width: 250px;
+    height: 150px;
     transition: 0.5s;
 }
-.pequeno:hover { transform: scale(1.05); }
 
-.descricao, .descricao2 { display: flex; flex-direction: column; }
+.pequeno:hover {
+    transform: scale(1.05);
+}
 
-.total1, .total2 { width: 500px; margin: 5px; }
+.descricao,
+.descricao2 {
+    display: flex;
+    flex-direction: column;
+}
 
-.div2baixo, .div2cima { display: flex; margin-top: 15px; }
+.total1,
+.total2 {
+    width: 500px;
+    margin: 5px;
+}
 
-.grande3{
+.div2baixo,
+.div2cima {
+    display: flex;
+    margin-top: 15px;
+}
+
+.grande3 {
     margin-top: 35px;
     margin-right: 20px;
     transition: 500ms;
@@ -123,12 +148,26 @@ main {
     transform: scale(1.05);
 }
 
-.link { color: var(--text-accent); } /* Changed to text-accent for links */
-.link2 { color: var(--text-light); }
+.link {
+    color: var(--text-accent);
+}
 
-section { margin-left: 10px; }
-h2 { margin: 20px 0 20px 150px; text-shadow: 1px 0 10px var(--primary-accent); } /* Changed text-shadow to primary accent */
-p { color: var(--text-medium); } /* Changed paragraph color to text-medium */
+.link2 {
+    color: var(--text-light);
+}
+
+section {
+    margin-left: 10px;
+}
+
+h2 {
+    margin: 20px 0 20px 150px;
+    text-shadow: 1px 0 10px var(--primary-accent);
+}
+
+p {
+    color: var(--text-medium);
+}
 
 footer {
     width: 100%;
@@ -137,21 +176,19 @@ footer {
     margin-top: 50px;
 }
 
-/* --- ESTILOS DO MENU HAMBÚRGUER --- */
-
 .menu-toggle {
-    display: none; /* Esconde o checkbox */
+    display: none;
 }
 
 .hamburger {
-    display: none; /* Oculta o ícone do hambúrguer por padrão */
+    display: none;
     cursor: pointer;
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
     height: 25px;
     padding: 5px;
-    z-index: 20; /* Garante que o hambúrguer esteja acima do menu */
+    z-index: 20;
 }
 
 .hamburger .bar {
@@ -162,103 +199,115 @@ footer {
     border-radius: 2px;
 }
 
-/* Animação do hambúrguer ao ser clicado */
-.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+.menu-toggle:checked+.hamburger .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
-.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+
+.menu-toggle:checked+.hamburger .bar:nth-child(2) {
     opacity: 0;
 }
-.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+
+.menu-toggle:checked+.hamburger .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-
-/* --- MEDIA QUERIES PARA O MOBILE (MENU HAMBÚRGUER) --- */
-@media (max-width: 768px) { /* Ajuste este valor se precisar que o hambúrguer apareça antes */
+@media (max-width: 768px) {
     header {
-        padding: 15px 25px; /* Ajusta o padding para telas menores */
-        justify-content: space-between; /* Mantém logo e hambúrguer nas pontas */
+        padding: 15px 25px;
+        justify-content: space-between;
     }
 
     .main-nav {
-        /* Transforma a navegação em um menu lateral/full-screen para mobile */
         position: absolute;
-        top: 100%; /* Começa logo abaixo do header */
+        top: 100%;
         left: 0;
         width: 100%;
-        height: auto; /* Pode ser 100vh se quiser tela cheia */
-        background-color: var(--surface-menu-mobile); /* Cor de fundo do menu mobile */
-        flex-direction: column; /* Itens do menu um abaixo do outro */
+        height: auto;
+        background-color: var(--surface-menu-mobile);
+        flex-direction: column;
         align-items: center;
-        gap: 20px; /* Espaçamento entre os links */
+        gap: 20px;
         padding: 20px 0;
         box-shadow: 0 8px 16px var(--shadow-strong);
         transition: transform 0.3s ease-out;
-        transform: translateY(-100%); /* Esconde o menu por padrão */
+        transform: translateY(-100%);
         opacity: 0;
-        pointer-events: none; /* Impede cliques quando invisível */
+        pointer-events: none;
     }
 
-    /* Mostra o menu quando o checkbox está marcado */
-    .menu-toggle:checked ~ .main-nav {
-        transform: translateY(0); /* Desliza o menu para baixo */
+    .menu-toggle:checked~.main-nav {
+        transform: translateY(0);
         opacity: 1;
         pointer-events: all;
     }
 
     .hamburger {
-        display: flex; /* Mostra o ícone do hambúrguer */
+        display: flex;
     }
 
-    /* Oculta os links do nav em telas maiores quando o hambúrguer está ativo */
-    /* Isso garante que o nav normal desapareça para dar lugar ao menu hambúrguer */
     nav a {
-        padding: 10px 0; /* Padding para os links dentro do menu mobile */
+        padding: 10px 0;
         width: 100%;
         text-align: center;
     }
 
-    /* Outras adaptações existentes para mobile */
-    body { max-width: 100%; flex-wrap: wrap; } /* max-width: 479px não é recomendado no body */
-    main { max-width: 100%;} /* max-width: auto em main pode ser problemático */
-    .cartoes, .cartaog, .div2cima, .div2baixo {
+    body {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    main {
+        max-width: 100%;
+    }
+
+    .cartoes,
+    .cartaog,
+    .div2cima,
+    .div2baixo {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
     }
-    .imgta, .imagemg, .imagemp, .pequeno {
-        width: 320px; max-width: 320px; height: auto; margin: 10px 0;
-    }
-    .descricao { margin-top: 20px; }
 
-    header{
-        max-width: 100%; /* Garante que o header se ajuste */
-    }
-
-    /* Ajuste para o texto h2 em mobile */
-    h2 {
-        margin: 20px 0 20px 20px; /* Reduz o margin-left para telas pequenas */
-        text-align: center; /* Opcional: centraliza o título */
-    }
-
-    /* Ajuste para o .cartaog em mobile (agora é flex-direction: column) */
-    .cartaog {
-        flex-direction: column; /* Força o card a empilhar em mobile */
-        height: auto; /* Altura automática para o conteúdo se ajustar */
-        padding: 15px; /* Adiciona um pouco de padding interno */
+    .imgta,
+    .imagemg,
+    .imagemp,
+    .pequeno {
+        width: 320px;
+        max-width: 320px;
+        height: auto;
+        margin: 10px 0;
     }
 
     .descricao {
-        margin-right: 0; /* Remove margin-right que pode causar problemas */
-        margin-top: 15px; /* Ajusta o margin-top */
-        text-align: center; /* Centraliza a descrição */
+        margin-top: 20px;
+    }
+
+    header {
+        max-width: 100%;
+    }
+
+    h2 {
+        margin: 20px 0 20px 20px;
+        text-align: center;
+    }
+
+    .cartaog {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .descricao {
+        margin-right: 0;
+        margin-top: 15px;
+        text-align: center;
     }
 
     .imgta {
-        width: 100%; /* Imagem preenche a largura do card em mobile */
-        height: auto; /* Altura automática */
-        border-radius: 20px; /* Mantém o border-radius */
-        margin-left: 0; /* Remove margin-left para centralizar */
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-left: 0;
     }
 }
